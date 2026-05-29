@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Wedding Of Eka & Hermawan</title>
+
+  <!-- ==========================================================================
+     META TAGS UNTUK PRATINJAU LINK (WHATSAPP SHARE THUMBNAIL)
+     PENTING: Ganti "https://domain-undangan-anda.com/slide1.jpg" di bawah ini
+     dengan URL link hosting tempat Anda menyimpan gambar slide1.jpg nantinya.
+     ========================================================================== -->
+  <meta property="og:title" content="The Wedding Of Eka & Hermawan" />
+  <meta property="og:description" content="Mengharap kehadiran Bapak/Ibu/Saudara/i di hari bahagia pernikahan kami." />
+  <meta property="og:image" content="https://wedding-eka-hermawan.netlify.app/cover.jpg" /> 
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:url" content="https://wedding-eka-hermawan.netlify.app/" />
+  <meta property="og:type" content="website" />
+
+  <!-- Fav Icon -->
+  <link rel="shortcut icon" href="e&h.png" type="image/x-icon">
+
+  <!-- Link Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Chalisa+Oktavia:wght@400;600&family=Montserrat:wght@300;400;500;600&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* Deklarasi Font Lokal Seluler */
+    @font-face {
+      font-family: 'Chalisa Oktavia Local';
+      src: url('fonts/Chalisa-Oktavia.woff2') format('woff2'),
+           url('fonts/Chalisa-Oktavia.woff') format('woff'),
+           url('fonts/Chalisa-Oktavia.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+      overflow-x: hidden;
+      touch-action: pan-x pan-y;
+      background: #000;
+      font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #58708a;
+    }
+
+    body.locked {
+      overflow: hidden;
+      height: 100vh;
+    }
+
+    section {
+      min-height: 100vh;
+      width: 100%;
+      position: relative;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: scroll; 
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 60px 20px;
+    }
+
+    .overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.05);
+      z-index: 1;
+    }
+
+    .container {
+      position: relative;
+      z-index: 10;
+      width: 100%;
+      max-width: 500px; 
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    /* Background Slides */
+    .slide-hero { background-image: url('slide1.jpg'); }
+    #slide2 { background-image: url('slide2.jpg'); }
+    #slide22 { background-image: url('slide22.jpg'); }
+    #slide3 { background-image: url('slide3.jpg'); padding-top: 70px; padding-bottom: 50px; }
+    #slide4 { background-image: url('slide4.jpg'); }
+    #slide5 { background-image: url('slide5.jpg'); }
+    #slide6 { background-image: url('slide6.jpg'); }
+
+    /* Frame Penampung Quote */
+    .frame-container {
+      position: relative;
+      width: 100%;
+      max-width: 400px;
+      margin: 0 auto;
+      aspect-ratio: 4 / 5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .quote-bg-image {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      pointer-events: none;
+    }
+
+    .quote-text-layer {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 40px;
+      width: 100%;
+    }
+
+    /* Tipografi Responsif */
+    .title {
+      font-family: 'Chalisa Oktavia', 'Chalisa Oktavia Local', Georgia, Garamond, serif;
+      font-size: clamp(40px, 10vw, 65px);
+      line-height: 1.2;
+      color: #c47c72;
+      margin-bottom: 20px;
+    }
+
+    .subtitle {
+      letter-spacing: 4px;
+      font-size: clamp(12px, 3vw, 15px);
+      color: #7f95ad;
+    }
+
+    .couple-name {
+      font-family: 'Chalisa Oktavia', 'Chalisa Oktavia Local', Georgia, serif;
+      font-size: clamp(24px, 5.5vw, 34px) !important;
+      color: #c78f87;
+      line-height: 1.3;
+      word-break: break-word;
+    }
+
+    /* Tombol Utama */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-width: 190px;
+      padding: 12px 24px;
+      border-radius: 999px;
+      border: 1.5px solid #7087a0;
+      background: rgba(255, 255, 255, 0.4);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      color: #4e6a88;
+      text-decoration: none;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+      margin-top: 35px;
+      font-size: 13px;
+      letter-spacing: 1px;
+    }
+
+    .btn:active, .btn:hover {
+      transform: scale(1.02);
+    }
+
+    .btn-icon-wrapper {
+      position: relative;
+      width: 24px;
+      height: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .btn-icon-wrapper .envelope-svg {
+      width: 100%;
+      height: 100%;
+      fill: none;
+      stroke: #4e6a88;            
+      stroke-width: 2;            
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .btn-icon-wrapper .love-svg {
+      position: absolute;
+      top: -3px;
+      left: -2px;
+      width: 12px;
+      height: 12px;
+      fill: #ff9fb2;
+      z-index: 2;
+      transform-origin: center;
+      animation: lovePulse 1.2s infinite ease-in-out;
+    }
+
+    @keyframes lovePulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+    }
+
+    /* ==========================================================================
+       STRUKTUR FOTO TANPA BINGKAI / FRAME PUTIH (SLIDE 3)
+       ========================================================================== */
+    .avatar-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      width: 100%;
+      max-width: 360px;
+      margin: 25px auto;
+    }
+
+    .avatar-box {
+      flex: 1;
+      text-align: center;
+    }
+
+    .avatar-box img {
+      width: 100%;
+      max-width: 140px;
+      height: auto;
+      object-fit: contain;
+      display: block;
+      margin: 0 auto;
+    }
+
+    /* Countdown Grid */
+    .countdown-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 5px;
+      max-width: 320px;
+      margin: 15px auto 0 auto;
+      align-items: center;
+    }
+
+    .countdown-col {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: rgba(255,255,255,0.3);
+      padding: 8px 5px;
+      border-radius: 12px;
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+    }
+
+    .countdown-col .digit {
+      font-size: clamp(22px, 5vw, 28px);
+      font-weight: bold;
+      color: #4a637d;
+      line-height: 1;
+    }
+
+    .countdown-col .label {
+      font-size: 11px;
+      font-weight: 500;
+      color: #647b93;
+      margin-top: 4px;
+    }
+
+    /* Media Sosial Instagram */
+    .instagram {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;                  
+      margin-top: 10px;
+      padding: 6px 16px;         
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.4); 
+      border: 1px solid #7087a0; 
+      text-decoration: none;
+      color: #4a637d;            
+      font-size: 13px;
+      font-weight: 500;
+    }
+
+    .instagram svg {
+      width: 14px;
+      height: 14px;
+      fill: #4a637d;             
+    }
+
+    /* RSVP */
+    .rsvp-box {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      margin-bottom: 25px;
+      width: 100%;
+    }
+
+    .rsvp-option-card {
+      flex: 1;
+      height: 50px; 
+      border-radius: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px; 
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .hadir { background: #8bb2d4; }
+    .tidak { background: #b6c6d3; }
+
+    input, textarea {
+      width: 100%;
+      padding: 14px;
+      margin-bottom: 12px;
+      border: 1px solid rgba(112, 135, 160, 0.3);
+      border-radius: 14px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 14px;
+      background: rgba(255, 255, 255, 0.8);
+      color: #333;
+      outline: none;
+    }
+
+    /* Buku Tamu */
+    .comment-list {
+      margin-top: 25px;
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      max-height: 280px;
+      overflow-y: auto;
+      padding-right: 5px;
+    }
+
+    .comment-item {
+      background: rgba(255,255,255,0.5);
+      border: 1px solid rgba(255,255,255,0.6);
+      padding: 12px;
+      border-radius: 14px;
+      word-break: break-word;
+    }
+
+    .comment-name { font-weight: 700; color: #4e6a88; font-size: 13px; }
+    .comment-status { font-size: 11px; margin-bottom: 4px; color: #7d93aa; }
+    .comment-text { font-size: 13px; line-height: 1.4; color: #4a637d; }
+
+    /* Music Player */
+    .music-player {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 999;
+      background: white;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+      cursor: pointer;
+      font-size: 18px;
+    }
+
+    .animate-rise {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease;
+    }
+
+    .animate-rise.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 480px) {
+      section { padding: 40px 16px; }
+      .quote-text-layer { padding: 25px 20px; font-size: 13px; line-height: 1.6; }
+      .avatar-container { gap: 15px; }
+    }
+  
+body {
+  font-size: clamp(14px, 3.5vw, 16px);
+  line-height: 1.6;
+}
+
+.container {
+  width: min(92vw, 650px) !important;
+}
+
+.title {
+  font-size: clamp(32px, 8vw, 60px) !important;
+}
+
+.couple-name {
+  font-size: clamp(22px, 5vw, 32px) !important;
+  padding: 0 10px;
+}
+
+.btn {
+  min-width: 160px !important;
+  max-width: 100%;
+  font-size: clamp(12px, 3vw, 14px);
+}
+
+.avatar-box img {
+  max-width: clamp(90px, 28vw, 150px) !important;
+}
+
+.countdown-row {
+  width: 100%;
+  max-width: 400px !important;
+}
+
+.countdown-col .digit {
+  font-size: clamp(18px, 5vw, 28px) !important;
+}
+
+.comment-name,
+.comment-text,
+.comment-status,
+input,
+textarea {
+  font-size: clamp(13px, 3.5vw, 15px);
+}
+
+.music-player {
+  width: clamp(42px, 10vw, 50px);
+  height: clamp(42px, 10vw, 50px);
+}
+
+@media (max-width: 480px) {
+  section { padding: 35px 14px !important; }
+  .title { font-size: 34px !important; }
+  .couple-name { font-size: 22px !important; }
+  .avatar-container { gap: 10px !important; }
+  .btn {
+    width: 100%;
+    max-width: 280px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .frame-container { max-width: 320px; }
+  .quote-text-layer {
+    padding: 20px 15px !important;
+    font-size: 12px !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .container { max-width: 700px !important; }
+  .avatar-box img { max-width: 180px !important; }
+  .countdown-row { max-width: 500px !important; }
+}
+
+</style>
+</head>
+
+<body class="locked">
+
+<audio id="music" loop autoplay>
+  <source src="music.mp3" type="audio/mp3">
+</audio>
+
+<div class="music-player" onclick="toggleMusic()">🎵</div>
+
+<!-- SLIDE 1: HERO -->
+<section class="slide-hero">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="subtitle">THE WEDDING OF</div>
+    <br><br>
+    <h1 class="title">Eka<br>&<br>Hermawan</h1>
+
+    <button class="btn" onclick="openInvitation()">
+      <span class="btn-icon-wrapper">
+        <svg class="love-svg" viewBox="0 0 24 24">
+          <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.5 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+        </svg>
+        <svg class="envelope-svg" viewBox="0 0 24 24">
+          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+          <path d="M22 6l-10 7L2 6"/>
+        </svg>
+      </span>
+      <span>BUKA UNDANGAN</span>
+    </button>
+  </div>
+</section>
+
+<!-- SLIDE 2: QUOTE -->
+<section id="slide2">
+  <div class="overlay"></div>
+  <div class="frame-container animate-rise">
+    <img src="frame.png" class="quote-bg-image" alt="Dekorasi Latar">
+    <div class="quote-text-layer" style="font-size: 13px; color: #58708a; font-weight: 500; line-height: 1.6;">
+      “Dan diantara tanda-tanda<br>(kebesaran)-Nya ialah Dia<br> menciptakan pasangan-pasangan<br>untukmu dari jenismu sendiri, agar<br>kamu cenderung dan merasa<br>tentram kepadanya, dan Dia<br>menjadikan diantaramu<br>rasa kasih dan sayang.”
+      <br><br>
+      <strong>(Q.S. Ar-Rum:21)</strong>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 22: SALAM & COUNTDOWN -->
+<section id="slide22">
+  <div class="overlay"></div>
+  <div class="container animate-rise">
+    <div class="salam-pembuka" style="margin-bottom: 30px;">
+      <p style="font-size: 13px; line-height: 1.6; color: #4a637d;">
+        Assalamualaikum Warahmatullahi Wabarakatuh<br><br>
+        Dengan memohon Ridho dan Rahmat Allah SWT,<br>
+        kami mengharapkan kehadiran Bapak/Ibu/Saudara/i pada acara<br>
+        pernikahan Putra dan Putri kami:
+      </p>
+    </div>
+
+    <div style="background: rgba(255,255,255,0.2); padding: 25px 15px; border-radius: 20px;">
+      <h3 style="font-family: 'Montserrat', sans-serif; font-size: 20px; color: #7087a0; font-weight: bold; margin-bottom: 10px;">JUNI 21st, 2026</h3>
+      
+      <img src="save-the-date.png" style="width: 100px; height: auto; margin: 0 auto 15px auto; display: block;" alt="Save the Date">
+      
+      <div class="countdown-row">
+        <div class="countdown-col"><span class="digit" id="days">00</span><span class="label">Hari</span></div>
+        <div class="countdown-col"><span class="digit" id="hours">00</span><span class="label">Jam</span></div>
+        <div class="countdown-col"><span class="digit" id="minutes">00</span><span class="label">Menit</span></div>
+        <div class="countdown-col"><span class="digit" id="seconds">00</span><span class="label">Detik</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 3: MEMPELAI (FOTO CLEAN PNG DENGAN SIMBOL & DI TENGAH) -->
+<section id="slide3">
+  <div class="overlay"></div>
+  <div class="container">
+    
+    <!-- Mempelai Wanita -->
+    <div class="animate-rise" style="margin-bottom: 10px; margin-top: 50px;">
+      <h2 class="couple-name">Eka Amalia Utari, S.Ars</h2>
+      <p style="font-size: 13px; margin-top: 5px; line-height: 1.4; color: #4a637d;">Putri Pertama dari<br>Alm. Bapak Johan dan Ibu Suryani</p>
+      <a href="https://instagram.com/amaliautari" target="_blank" class="instagram">
+        <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+        <span>@amaliautari</span>
+      </a>
+    </div>
+
+    <!-- Wadah Foto Berdampingan Bersih dengan Simbol & di Tengah -->
+    <div class="avatar-container animate-rise">
+      <div class="avatar-box">
+        <img src="groom.png" alt="Hermawan Cipta Putra">
+      </div>
+      
+      <!-- Simbol & Penyelaras di Tengah Foto -->
+      <div style="font-family: 'Playfair Display', Georgia, serif; font-size: 28px; color: #c47c72; font-weight: bold; min-width: 20px;">&</div>
+      
+      <div class="avatar-box">
+        <img src="bride.png" alt="Eka Amalia Utari">
+      </div>
+    </div>
+
+    <!-- Mempelai Pria -->
+    <div class="animate-rise" style="margin-top: 10px;">
+      <h2 class="couple-name">Hermawan Cipta Putra, A.Md.T</h2>
+      <p style="font-size: 13px; margin-top: 5px; line-height: 1.4; color: #4a637d;">Putra Kedua dari<br>Alm. Bapak Sucipto dan Ibu Herlina</p>
+      <a href="https://instagram.com/signature_behind" target="_blank" class="instagram">
+        <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+        <span>@signature_behind</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 4: DETAIL ACARA -->
+<section id="slide4">
+  <div class="overlay"></div>
+  <div class="container animate-rise" style="color: #556b82; padding: 0 10px;">
+    <div class="akad-section" style="margin-bottom: 25px;">
+      <div style="font-size: 14px; letter-spacing: 2px; font-weight: bold; color: #6a7f96;">FRIDAY</div>
+      <div style="display: flex; justify-content: center; align-items: center; margin: 5px 0;">
+        <span style="font-size: 46px; font-weight: bold; color: #475a6e;">12</span>
+        <div style="text-align: left; font-size: 13px; font-weight: bold; letter-spacing: 1px; margin-left: 8px; line-height: 1.3;">JUNE<br>2026</div>
+      </div>
+      <h2 style="font-family: 'Playfair Display', Georgia, serif; font-size: 22px; color: #c47c72; letter-spacing: 1px; margin: 4px 0 8px 0; font-weight: bold;">AKAD NIKAH</h2>
+      <div style="font-size: 15px; font-weight: bold; margin-bottom: 4px;">08:00 - SELESAI</div>
+      <div style="font-size: 14px; font-weight: 800; color: #444; letter-spacing: 0.5px; margin-bottom: 4px;">MASJID RAYA BAITURRAHMAN</div>
+      <p style="font-size: 13px; line-height: 1.4; max-width: 90%; margin: 0 auto;">Jalan Muhammad Jam No.1, Kampung Baru, Kecamatan Baiturrahman, Kota Banda Aceh.</p>
+    </div>
+
+    <hr style="width: 50px; border: 0; border-top: 1.5px solid #8ba0b5; margin: 20px auto;">
+
+    <div class="resepsi-section" style="margin-bottom: 30px;">
+      <div style="font-size: 14px; letter-spacing: 2px; font-weight: bold; color: #6a7f96;">SUNDAY</div>
+      <div style="display: flex; justify-content: center; align-items: center; margin: 5px 0;">
+        <span style="font-size: 46px; font-weight: bold; color: #475a6e;">21</span>
+        <div style="text-align: left; font-size: 13px; font-weight: bold; letter-spacing: 1px; margin-left: 8px; line-height: 1.3;">JUNE<br>2026</div>
+      </div>
+      <h2 style="font-family: 'Playfair Display', Georgia, serif; font-size: 22px; color: #c47c72; letter-spacing: 1px; margin: 4px 0 8px 0; font-weight: bold;">RESEPSI</h2>
+      <div style="font-size: 15px; font-weight: bold; margin-bottom: 4px;">10:00 - SELESAI</div>
+      <div style="font-size: 14px; font-weight: 800; color: #444; letter-spacing: 0.5px; margin-bottom: 4px;">BEULANGONG RAJA</div>
+      <p style="font-size: 13px; line-height: 1.4; max-width: 90%; margin: 0 auto;">Jl. Meulaboh - Banda Aceh No.KM 12, Keude Bieng, Kec. Lhoknga, Aceh Besar.</p>
+    </div>
+
+    <a href="https://maps.google.com/?q=Masjid+Raya+Baiturrahman" target="_blank" class="btn" style="margin-top: 5px;">
+      <svg style="width: 16px; height: 16px; fill: #475a6e;" viewBox="0 0 24 24"><path d="M12 0c-4.198 0-7.6 3.402-7.6 7.602 0 4.198 3.402 9.213 7.6 16.398 4.198-7.185 7.6-12.2 7.6-16.398 0-4.2-3.402-7.602-7.6-7.602zm0 11c-1.657 0-3-1.343-3-3s1.343-3 3-3 3 1.343 3 3-1.343 3-3 3z"/></svg>
+      <span>PETUNJUK LOKASI</span>
+    </a>
+  </div>
+</section>
+
+<!-- SLIDE 5: RSVP & UCAPAN -->
+<section id="slide5">
+  <div class="overlay"></div>
+  <div class="container animate-rise" style="padding: 0 5px;">
+    <h2 style="font-family: 'Playfair Display', Georgia, serif; font-size: 22px; color: #c78f87; font-weight: bold; margin-bottom: 8px;">KONFIRMASI KEHADIRAN</h2>
+    <div style="color: #8ba0b5; font-size: 16px; margin-bottom: 15px;">♥</div>
+    <p style="font-size: 13px; line-height: 1.5; color: #4a637d; margin-bottom: 20px;">Kami berharap Bapak/Ibu/Saudara/i dapat hadir di hari bahagia kami.</p>
+
+    <div class="rsvp-box">
+      <label class="rsvp-option-card hadir">
+        <input type="radio" name="kehadiran" value="Hadir" style="display: none;">
+        <svg style="width: 18px; height: 18px; fill: none; stroke: white; stroke-width: 2.5;" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/></svg>
+        <span style="color: white; font-size: 13px; font-weight: bold;">HADIR</span>
+      </label>
+      <label class="rsvp-option-card tidak">
+        <input type="radio" name="kehadiran" value="Tidak Hadir" style="display: none;">
+        <svg style="width: 18px; height: 18px; fill: none; stroke: white; stroke-width: 2.5;" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M15 9l-6 6M9 9l6 6"/></svg>
+        <span style="color: white; font-size: 13px; font-weight: bold;">ABSEN</span>
+      </label>
+    </div>
+
+    <h3 style="margin-bottom: 12px; font-size: 16px; color: #7087a0; font-weight: 600;">UCAPAN & DOA</h3>
+    <input type="text" id="guest-name" placeholder="Nama Anda">
+    <div style="position: relative; width: 100%;">
+      <textarea id="guest-message" placeholder="Tulis ucapan Anda..." maxlength="200" oninput="document.getElementById('char-count').innerText = this.value.length + '/200'"></textarea>
+      <span id="char-count" style="position: absolute; bottom: 20px; right: 15px; font-size: 11px; color: #8ba0b5;">0/200</span>
+    </div>
+
+    <button type="button" id="btn-kirim" class="btn" style="width: 100%; margin-top: 5px;">
+      <svg style="width: 14px; height: 14px; fill: #4e6a88;" viewBox="0 0 24 24"><path d="M24 0l-6 22-5.5-7.5 4.5-7-8 6.5-9-2.5 24-11.5zm-11 15.5v6.5l3-4.5-3-2z"/></svg>
+      <span>KIRIM UCAPAN</span>
+    </button>
+    
+    <div id="comment-list" class="comment-list"></div>
+  </div>
+</section>
+
+<!-- SLIDE 6: TANDA KASIH -->
+<section id="slide6">
+  <div class="overlay"></div>
+  <div class="container animate-rise" style="max-width: 380px;">
+    <h2 style="font-family: 'Playfair Display', Georgia, serif; font-size: 22px; color: #c47c72; font-weight: bold; margin-bottom: 10px;">TANDA KASIH</h2>
+    <p style="font-size: 13px; line-height: 1.6; color: #4a637d; margin-bottom: 20px;">Doa restu Anda merupakan karunia terindah bagi kami. Namun jika memberi adalah ungkapan tanda kasih, dapat melalui:</p>
+
+    <div class="bank-card" style="background: rgba(255, 255, 255, 0.4); border: 1px solid #d2dee8; border-radius: 20px; padding: 20px; margin-bottom: 25px;">
+      <img src="logo-bsi.png" style="height: 30px; width: auto; margin-bottom: 10px; object-fit: contain;" alt="BSI">
+      <div id="rekening-num" style="font-size: 22px; font-weight: bold; color: #3b536b; margin-bottom: 4px; letter-spacing: 1px;">9706244130</div>
+      <div style="font-size: 13px; color: #556b82; font-style: italic; margin-bottom: 15px;">a.n Eka Amalia Utari</div>
+      
+      <button onclick="copyToClipboard()" class="btn" style="min-width: 150px; padding: 8px 20px; margin-top: 0; font-size: 12px;">
+        <svg style="width: 12px; height: 12px; fill: #4e6a88;" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+        <span>SALIN REKENING</span> 
+      </button>
+    </div>
+
+    <div style="font-size: 13px; color: #4a637d; font-weight: 500;">Terima Kasih</div><br>
+    <img src="e&h.png" style="width: 60px; height: auto; margin: 0 auto;" alt="EH">
+  </div>
+</section>
+
+<!-- JAVASCRIPT -->
+<script>
+const DATABASE_URL = "https://script.google.com/macros/s/AKfycbwWUGGs9IZq2-j6sWjVxX5E47yLorxu5tApaADZs-no-ogGS1mNXMVV-BCmcbR6VlX7UA/exec";
+const music = document.getElementById('music');
+
+window.addEventListener('load', () => {
+  music.volume = 0.6;
+  const playPromise = music.play();
+  if(playPromise !== undefined){
+    playPromise.catch(() => { console.log("Autoplay ditangguhkan"); });
+  }
+  loadCommentsOnline();
+});
+
+function openInvitation(){
+  document.body.classList.remove('locked');
+  music.play().catch(() => {});
+  document.getElementById('slide2').scrollIntoView({ behavior:'smooth' });
+}
+
+function toggleMusic(){
+  if(music.paused){ music.play(); } else { music.pause(); }
+}
+
+const targetDate = new Date("June 21, 2026 08:00:00").getTime();
+
+setInterval(function(){
+  const now = new Date().getTime();
+  const distance = targetDate - now;
+  if (distance < 0) return;
+
+  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  document.getElementById("days").innerHTML = days < 10 ? "0" + days : days;
+  document.getElementById("hours").innerHTML = hours < 10 ? "0" + hours : hours;
+  document.getElementById("minutes").innerHTML = minutes < 10 ? "0" + minutes : minutes;
+  document.getElementById("seconds").innerHTML = seconds < 10 ? "0" + seconds : seconds;
+}, 1000);
+
+document.addEventListener("DOMContentLoaded", function() {
+  const animatedElements = document.querySelectorAll('.animate-rise');
+  const observerOptions = { root: null, rootMargin: "0px", threshold: 0.05 };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+      } else {
+        entry.target.classList.remove('is-visible');
+      }
+    });
+  }, observerOptions);
+
+  animatedElements.forEach(el => observer.observe(el));
+});
+
+function copyToClipboard() {
+  var textToCopy = document.getElementById("rekening-num").innerText;
+  var cleanNumber = textToCopy.replace(/\s+/g, '');
+  navigator.clipboard.writeText(cleanNumber).then(function() {
+      alert("Nomor rekening berhasil disalin!");
+  }).catch(function(err) {
+      console.error('Gagal menyalin: ', err);
+  });
+}
+
+const submitButton = document.getElementById('btn-kirim');
+const commentList = document.getElementById('comment-list');
+
+function appendCommentToHTML(name, attendance, message) {
+  const comment = document.createElement('div');
+  comment.classList.add('comment-item');
+  comment.innerHTML = `
+    <div class="comment-name">${name}</div>
+    <div class="comment-status">✨ ${attendance}</div>
+    <div class="comment-text">${message}</div>
+  `;
+  commentList.prepend(comment);
+}
+
+function loadCommentsOnline() {
+  if(!DATABASE_URL || DATABASE_URL.includes("XXXXX")) return;
+  fetch(DATABASE_URL)
+  .then(res => res.json())
+  .then(data => {
+    commentList.innerHTML = "";
+    data.forEach(item => { appendCommentToHTML(item.nama, item.kehadiran, item.ucapan); });
+  })
+  .catch(err => console.log("Gagal memuat ucapan: ", err));
+}
+
+submitButton.addEventListener('click', function(){
+  const name = document.getElementById('guest-name').value.trim();
+  const message = document.getElementById('guest-message').value.trim();
+  const attendance = document.querySelector('input[name="kehadiran"]:checked');
+
+  if(!name || !message || !attendance){
+    alert("Mohon isi nama, ucapan, dan status kehadiran Anda.");
+    return;
+  }
+
+  submitButton.innerText = "MENGIRIM...";
+  submitButton.disabled = true;
+
+  const formData = { nama: name, kehadiran: attendance.value, ucapan: message };
+
+  fetch(DATABASE_URL, {
+    method: 'POST',
+    body: JSON.stringify(formData),
+    headers: { 'Content-Type': 'text/plain' }
+  })
+  .then(res => res.json())
+  .then(res => {
+    if(res.status === "success") {
+      appendCommentToHTML(name, attendance.value, message);
+      resetForm();
+      alert("Terima kasih! Ucapan Anda telah tersimpan secara online.");
+    } else {
+      alert("Gagal menyimpan ke server.");
+    }
+  })
+  .catch(err => {
+    console.error(err);
+    appendCommentToHTML(name, attendance.value, message);
+    resetForm();
+    alert("Ucapan terkirim (Local Fallback).");
+  })
+  .finally(() => {
+    submitButton.innerText = "KIRIM UCAPAN";
+    submitButton.disabled = false;
+  });
+});
+
+function resetForm() {
+  document.getElementById('guest-name').value = '';
+  document.getElementById('guest-message').value = '';
+  document.getElementById('char-count').innerText = '0/200';
+  document.querySelectorAll('input[name="kehadiran"]').forEach(el => el.checked = false);
+}
+</script>
+
+</body>
+</html>

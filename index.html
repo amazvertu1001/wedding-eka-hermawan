@@ -744,7 +744,7 @@ submitButton.addEventListener('click', function(){
     if(res.status === "success") {
       appendCommentToHTML(name, attendance.value, message);
       resetForm();
-      alert("Terima kasih! Ucapan Anda telah tersimpan secara online.");
+      alert("Terima kasih ♡ Ucapan Anda telah terkirim");
     } else {
       alert("Gagal menyimpan ke server.");
     }
@@ -781,29 +781,27 @@ function getGuestName() {
   }
 }
 
-// Jalankan fungsi di atas saat halaman selesai dimuat
-window.addEventListener('DOMContentLoaded', getGuestName);
-  
-  document.addEventListener("DOMContentLoaded", function () {
-        // 1. Ambil parameter 'to' dari URL website
-        const urlParams = new URLSearchParams(window.location.search);
-        const guestName = urlParams.get('to');
-        
-        // 2. Ambil elemen teks tamu di HTML
-        const guestSection = document.getElementById('guest-section');
-        const guestNamePlaceholder = document.getElementById('guest-name-placeholder');
+// ==========================================================================
+// KODE YANG SUDAH DIPERBAIKI (GABUNGAN & BERSIH DARI BENTROK)
+// ==========================================================================
+document.addEventListener("DOMContentLoaded", function () {
+    // 1. Ambil parameter 'to' dari URL website
+    const urlParams = new URLSearchParams(window.location.search);
+    const guestName = urlParams.get('to');
+    
+    // 2. Ambil elemen teks tamu di HTML
+    const guestSection = document.getElementById('guest-section');
+    const guestNamePlaceholder = document.getElementById('guest-name-placeholder');
 
-        if (guestName) {
-            // Jika link memiliki '/?to=nama', tampilkan teks dan ganti isinya sesuai nama di URL
-            guestSection.style.display = 'block';
-            
-            // Mengubah tanda plus (+) atau %20 kembali menjadi spasi normal
-            guestNamePlaceholder.innerText = decodeURIComponent(guestName);
-        } else {
-            // Jika tidak ada parameter '/?to=', SEMBUNYIKAN seluruh teks kepada & teman-teman
-            guestSection.style.display = 'none';
-        }
-    });
+    if (guestName) {
+        // Jika link memiliki '/?to=nama', tampilkan section dan isi namanya
+        guestSection.style.display = 'block';
+        guestNamePlaceholder.innerText = decodeURIComponent(guestName);
+    } else {
+        // Jika tidak ada parameter '/?to=', SEMBUNYIKAN total seluruh struktur teks tamu
+        guestSection.style.display = 'none';
+    }
+});
   
 </script>
 

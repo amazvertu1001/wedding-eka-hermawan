@@ -40,6 +40,17 @@
       font-weight: normal;
       font-style: normal;
       font-display: swap;
+      
+/* INI BARU INPUT BISA DIHAPUS LAGI COBA-COBA */
+      @font-face {
+      font-family: 'Montserrat';
+      src: url('Montserrat.otf') format('opentype'),
+           url('Montserrat.otf') format('opentype'),
+           url('Montserrat.otf') format('opentype'),
+           url('Montserrat.otf') format('opentype'); /* Cadangan jika ditaruh di luar folder fonts */
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
     }
 
     * {
@@ -559,7 +570,7 @@
       <p style="font-size: 12px; line-height: 1.4; max-width: 92%; margin: 0 auto;">Jl. Meulaboh - Banda Aceh No.KM 12, Keude Bieng, Kec. Lhoknga, Aceh Besar.</p>
     </div>
 
-    <a href="https://maps.google.com/?q=Masjid+Raya+Baiturrahman" target="_blank" class="btn" style="margin-top: 5px;">
+    <a href="https://maps.app.goo.gl/McdoFJ8vbYMZ75ZZ8" target="_blank" class="btn" style="margin-top: 5px;">
       <svg style="width: 14px; height: 14px; fill: #475a6e;" viewBox="0 0 24 24"><path d="M12 0c-4.198 0-7.6 3.402-7.6 7.602 0 4.198 3.402 9.213 7.6 16.398 4.198-7.185 7.6-12.2 7.6-16.398 0-4.2-3.402-7.602-7.6-7.602zm0 11c-1.657 0-3-1.343-3-3s1.343-3 3-3 3 1.343 3 3-1.343 3-3 3z"/></svg>
       <span>PETUNJUK LOKASI</span>
     </a>
@@ -619,6 +630,18 @@
         <span>SALIN REKENING</span> 
       </button>
     </div><br>
+    
+ <!-- BSI Pria / baru input bisa dihapus jika gagal-->
+      <div class="bank-card" style="background: rgba(255, 255, 255, 0.4); border: 1px solid #d2dee8; border-radius: 16px; padding: 15px; margin-bottom: 20px;">
+      <img src="logo-bsi.png" style="height: 24px; width: auto; margin-bottom: 8px; object-fit: contain;" alt="BSI">
+      <div id="rekening-num" style="font-size: 18px; font-weight: bold; color: #3b536b; margin-bottom: 2px; letter-spacing: 1px;">1055404069</div>
+      <div style="font-size: 12px; color: #556b82; font-style: sans-serif; margin-bottom: 12px;">a.n Hermawan Cipta Putra</div>
+      
+      <button onclick="copyToClipboard()" class="btn" style="min-width: 130px; padding: 6px 16px; margin-top: 0; font-size: 11px;">
+        <svg style="width: 10px; height: 10px; fill: #4e6a88;" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+        <span>SALIN REKENING</span> 
+      </button>
+    
 
     <div style="font-size: 13px; color: #4a637d; font-weight: 500;">Terima Kasih</div><br>
     <img src="e&h.png" style="width: 45px; height: auto; margin: 0 auto;" alt="EH">

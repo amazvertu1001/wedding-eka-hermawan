@@ -10,7 +10,7 @@
      ========================================================================== -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="The Wedding Of Eka & Hermawan" />
-  <meta property="og:description" content="Mengharap kehadiran Bapak/Ibu/Saudara/i di hari bahagia pernikahan kami." />
+  <meta property="og:description" content="Mengundang Bapak/Ibu/Saudara/i" />
   <meta property="og:url" content="https://amazvertu1001.github.io/wedding-eka-hermawan/" />
   
   <!-- Hubungkan langsung ke file gambar utama Anda -->
@@ -24,7 +24,10 @@
   <link rel="shortcut icon" href="e&h.png" type="image/x-icon">
 
   <!-- Link Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+  <!-- Link Google Fonts (Optimasi Seluler) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
 
   <style>
     /* Deklarasi Font Lokal Seluler & Sistem Cadangan */
@@ -137,7 +140,7 @@
     /* Tipografi Utama (Mengunci Font Lokal & Cadangan Serif Premium iOS/Android) */
     .title {
       font-family: 'Chalisa Oktavia', 'Playfair Display', 'Times New Roman', Georgia, serif;
-      font-size: 36px;
+      font-size: 50px;
       line-height: 1.1;
       color: #c47c72;
       margin-bottom: 15px;
@@ -151,7 +154,7 @@
 
     .couple-name {
       font-family: 'Chalisa Oktavia', 'Playfair Display', 'Times New Roman', Georgia, serif;
-      font-size: 24px !important;
+      font-size: 30px !important;
       color: #c78f87;
       line-height: 1.2;
       word-break: break-word;
@@ -398,7 +401,7 @@
     /* Optimasi Tablet & Desktop Menengah */
     @media (min-width: 600px) {
       .container { max-width: 460px; }
-      .title { font-size: 46px; }
+      .title { font-size: 50px; }
       .couple-name { font-size: 26px !important; }
       .avatar-box img { max-width: 125px; }
       .countdown-row { max-width: 320px; gap: 8px; }
@@ -420,15 +423,15 @@
   <div class="overlay"></div>
   <div class="container">
     <div class="subtitle">THE WEDDING OF</div>
-    <br><br>
-    <h1 class="title">Eka<br>&<br>Hermawan</h1><br>
+    <br><br><br>
+    <h1 class="title">Eka<br>&<br>Hermawan</h1><br><br>
 
     <!-- ==========================================================
        KODE UNTUK MENAMPILKAN NAMA TAMU SECARA OTOMATIS
        ========================================================== -->
-    <div id="guest-section" style="margin-top: 20px; color: #7f95ad; font-size: 13px;">
-      <p style="font-style: italic; margin-bottom: 5px;">Kepada Yth. Bapak/Ibu/Saudara/i:</p>
-      <h2 id="guest-name-placeholder" style="font-family: 'Montserrat', sans-serif; font-size: 18px; color: #c47c72; font-weight: bold; letter-spacing: 1px;">Nama Tamu</h2>
+    <div id="guest-section" style="margin-top: 20px; color: #7f95ad; font-size: 11px;">
+      <p style="font-style: serif; margin-bottom: 5px;">Kepada Yth. Bapak/Ibu/Saudara/i:</p>
+      <h2 id="guest-name-placeholder" style="font-family: 'Montserrat', sans-serif; font-size: 14px; color: #c47c72; font-weight: normal; letter-spacing: 1px;">Nama Tamu</h2>
     </div>
 
     <button class="btn" onclick="openInvitation()">
@@ -493,7 +496,7 @@
   <div class="container">
     
     <!-- Mempelai Wanita -->
-    <div class="animate-rise" style="margin-bottom: 5px; margin-top: 35px;">
+    <div class="animate-rise" style="margin-bottom: 30px; margin-top: 35px;">
       <h2 class="couple-name">Eka Amalia Utari, S.Ars</h2>
       <p style="font-size: 13px; margin-top: 3px; line-height: 1.4; color: #4a637d;">Putri Pertama dari<br>Alm. Bapak Johan dan Ibu Suryani</p>
       <a href="https://instagram.com/amaliautari" target="_blank" class="instagram">
@@ -516,7 +519,7 @@
     </div>
 
     <!-- Mempelai Pria -->
-    <div class="animate-rise" style="margin-top: 5px;">
+    <div class="animate-rise" style="margin-top: 30px;">
       <h2 class="couple-name">Hermawan Cipta Putra, A.Md.T</h2>
       <p style="font-size: 13px; margin-top: 3px; line-height: 1.4; color: #4a637d;">Putra Kedua dari<br>Alm. Bapak Sucipto dan Ibu Herlina</p>
       <a href="https://instagram.com/signature_behind" target="_blank" class="instagram">
@@ -538,7 +541,7 @@
       </div>
       <h2 style="font-family: 'Playfair Display', Georgia, serif; font-size: 18px; color: #c47c72; letter-spacing: 1px; margin: 2px 0 4px 0; font-weight: bold;">AKAD NIKAH</h2>
       <div style="font-size: 13px; font-weight: bold; margin-bottom: 2px;">08:00 - SELESAI</div>
-      <div style="font-size: 12px; font-weight: 800; color: #333; letter-spacing: 0.5px; margin-bottom: 2px;">MASJID RAYA BAITURRAHMAN</div>
+      <div style="font-size: 13px; font-weight: 800; color: #333; letter-spacing: 0.5px; margin-bottom: 2px;">MASJID RAYA BAITURRAHMAN</div>
       <p style="font-size: 12px; line-height: 1.4; max-width: 92%; margin: 0 auto;">Jalan Muhammad Jam No.1, Kampung Baru, Kecamatan Baiturrahman, Kota Banda Aceh.</p>
     </div><br>
 
@@ -552,7 +555,7 @@
       </div>
       <h2 style="font-family: 'Playfair Display', Georgia, serif; font-size: 20px; color: #c47c72; letter-spacing: 1px; margin: 2px 0 4px 0; font-weight: bold;">RESEPSI</h2>
       <div style="font-size: 13px; font-weight: bold; margin-bottom: 2px;">10:00 - SELESAI</div>
-      <div style="font-size: 12px; font-weight: 800; color: #333; letter-spacing: 0.5px; margin-bottom: 2px;">BEULANGONG RAJA</div>
+      <div style="font-size: 13px; font-weight: 800; color: #333; letter-spacing: 0.5px; margin-bottom: 2px;">BEULANGONG RAJA</div>
       <p style="font-size: 12px; line-height: 1.4; max-width: 92%; margin: 0 auto;">Jl. Meulaboh - Banda Aceh No.KM 12, Keude Bieng, Kec. Lhoknga, Aceh Besar.</p>
     </div>
 
@@ -567,9 +570,9 @@
 <section id="slide5">
   <div class="overlay"></div>
   <div class="container animate-rise" style="padding: 0 5px;">
-    <h2 style="font-family: 'Playfair Display', Georgia, serif; font-size: 18px; color: #c78f87; font-weight: bold; margin-bottom: 4px;">KONFIRMASI KEHADIRAN</h2>
+    <h2 style="font-family: 'Playfair Display', Georgia, serif; font-size: 20px; color: #c78f87; font-weight: bold; margin-bottom: 4px;">UCAPAN & DOA</h2>
     <div style="color: #8ba0b5; font-size: 14px; margin-bottom: 10px;">•</div>
-    <p style="font-size: 12px; line-height: 1.4; color: #4a637d; margin-bottom: 15px;">Kami berharap Bapak/Ibu/Saudara/i dapat hadir di hari bahagia kami.</p>
+    <p style="font-size: 12px; line-height: 1.4; color: #4a637d; margin-bottom: 15px;"></p><br><br>
 
     <div class="rsvp-box">
       <label class="rsvp-option-card hadir">
@@ -584,7 +587,6 @@
       </label>
     </div>
 
-    <h3 style="margin-bottom: 8px; font-size: 14px; color: #7087a0; font-weight: 600;">UCAPAN & DOA</h3>
     <input type="text" id="guest-name" placeholder="Nama Anda">
     <div style="position: relative; width: 100%;">
       <textarea id="guest-message" placeholder="Tulis ucapan Anda..." maxlength="200" oninput="document.getElementById('char-count').innerText = this.value.length + '/200'"></textarea>
@@ -604,13 +606,13 @@
 <section id="slide6">
   <div class="overlay"></div>
   <div class="container animate-rise" style="max-width: 340px;">
-    <h2 style="font-family: 'Playfair Display', Georgia, serif; font-size: 18px; color: #c47c72; font-weight: bold; margin-bottom: 8px;">TANDA KASIH</h2><br>
-    <p style="font-size: 12px; line-height: 1.5; color: #4a637d; margin-bottom: 15px;">Doa restu Anda merupakan karunia terindah bagi kami. Namun jika memberi adalah ungkapan tanda kasih, dapat melalui:</p>
+    <h2 style="font-family: 'Playfair Display', Georgia, serif; font-size: 20px; color: #c47c72; font-weight: bold; margin-bottom: 8px;">TANDA KASIH</h2><br>
+    <p style="font-size: 13px; line-height: 1.5; color: #4a637d; margin-bottom: 15px;">Doa restu Anda merupakan karunia terindah bagi kami. Namun jika memberi adalah ungkapan tanda kasih, dapat melalui:</p>
     <br><br>
     <div class="bank-card" style="background: rgba(255, 255, 255, 0.4); border: 1px solid #d2dee8; border-radius: 16px; padding: 15px; margin-bottom: 20px;">
       <img src="logo-bsi.png" style="height: 24px; width: auto; margin-bottom: 8px; object-fit: contain;" alt="BSI">
       <div id="rekening-num" style="font-size: 18px; font-weight: bold; color: #3b536b; margin-bottom: 2px; letter-spacing: 1px;">9706244130</div>
-      <div style="font-size: 12px; color: #556b82; font-style: italic; margin-bottom: 12px;">a.n Eka Amalia Utari</div>
+      <div style="font-size: 12px; color: #556b82; font-style: sans-serif; margin-bottom: 12px;">a.n Eka Amalia Utari</div>
       
       <button onclick="copyToClipboard()" class="btn" style="min-width: 130px; padding: 6px 16px; margin-top: 0; font-size: 11px;">
         <svg style="width: 10px; height: 10px; fill: #4e6a88;" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
@@ -618,7 +620,7 @@
       </button>
     </div><br>
 
-    <div style="font-size: 12px; color: #4a637d; font-weight: 500;">Terima Kasih</div><br>
+    <div style="font-size: 13px; color: #4a637d; font-weight: 500;">Terima Kasih</div><br>
     <img src="e&h.png" style="width: 45px; height: auto; margin: 0 auto;" alt="EH">
   </div>
 </section>
